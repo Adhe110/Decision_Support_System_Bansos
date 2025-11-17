@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TOPSIS Ranking</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <style>
+        body { font-family: Inter, sans-serif; }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-8">
+
+    <div class="max-w-5xl mx-auto">
+        
+        <a href="{{ url_for('home') }}"
+        class="inline-flex items-center gap-2 mb-6
+                px-4 py-2 bg-white border border-gray-300
+                text-gray-700 rounded-lg shadow-sm
+                hover:bg-gray-100 hover:border-gray-400 
+                transition">
+            <span class="text-lg">←</span> Home
+        </a>
+
+        <h2 class="text-3xl font-semibold mb-6">📄 Upload File Excel – Proses TOPSIS</h2>
+
+        <a href="/download_template"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition inline-block mb-4">
+            Download Template Excel
+        </a>
+
+        <!-- UPLOAD CARD -->
+        <div class="bg-white border shadow rounded-xl p-6">
+
+        <form method="POST" enctype="multipart/form-data" class="space-y-4">
+
+            <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                📄 Upload File Excel
+            </h3>
+
+            <label class="block text-sm font-medium mb-2">File Excel</label>
+
+            <!-- DROPZONE -->
+            <div id="dropzone"
+                class="w-full border-2 border-dashed border-gray-300 rounded-xl 
+                    py-10 flex flex-col items-center justify-center text-gray-500
+                    hover:bg-gray-50 transition cursor-pointer">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-2" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 16V4m0 0l4 4m-4-4L8 8m12 4a8 8 0 11-16 0 8 8 0 0116 0z" />
+                </svg>
+
+                <span id="fileName">Tarik file ke sini atau klik untuk memilih</span>
+            </div>
+
+            <input type="file" name="file" id="fileInput" class="hidden" required>
+
+            <button type="submit"
+                class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl 
+                    font-semibold shadow-md transition flex items-center justify-center gap-2">
+                ✨ Proses File Excel
+            </button>
+
+            </form>
+        </div>
+
+
+
+
+        {% if tableshow %}
+        <br>
+
+        <!-- FILTER CARD -->
+        <div class="bg-white border shadow rounded-xl p-6 mt-6">
+            <h3 class="text-xl font-semibold mb-4">🔍 Filter Data</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="font-medium">RW</label>
+                    <select id="filter_rw" class="w-full border rounded-lg p-2 mt-1">
+                        <option value="">All</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="font-medium">RT</label>
+                    <select id="filter_rt" class="w-full border rounded-lg p-2 mt-1">
+                        <option value="">All</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="font-medium">Dusun</label>
+                    <select id="filter_dusun" class="w-full border rounded-lg p-2 mt-1">
+                        <option value="">All</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-5 flex gap-4">
+                <form action="/download_filter" method="get" class="flex gap-4">
+                    <input type="hidden" name="rw" id="filter_val_rw">
+                    <input type="hidden" name="rt" id="filter_val_rt">
+                    <input type="hidden" name="dusun" id="filter_val_dusun">
+
+                    <button type="submit"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        Download Berdasarkan Filter
+                    </button>
+                </form>
+
+                <a href="{{ file_download }}"
+                   class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                   Download Semua
+                </a>
+            </div>
+        </div>
+
+        <!-- TABLE -->
+        <div class="bg-white border shadow rounded-xl p-6 mt-6">
+            <h3 class="text-xl font-semibold mb-4">📊 Hasil Perhitungan TOPSIS</h3>
+
+            <table id="tabel" class="display stripe hover w-full">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th>Nama</th>
+                        <th>NIK</th>
+                        <th>RW</th>
+                        <th>RT</th>
+                        <th>Dusun</th>
+                        <th>Nilai TOPSIS</th>
+                        <th>Ranking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{ row.Nama }}</td>
+                        <td>{{ row.NIK }}</td>
+                        <td>{{ row.RW }}</td>
+                        <td>{{ row.RT }}</td>
+                        <td>{{ row.Dusun }}</td>
+                        <td>{{ row.Nilai_TOPSIS }}</td>
+                        <td>{{ row.Ranking }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% endif %}
+    </div>
+
+
+    <!-- ===================== MODAL ERROR ====================== -->
+    <div id="errorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+      <div class="bg-white rounded-xl shadow-xl p-6 max-w-md w-full border">
+        <h2 class="text-xl font-semibold mb-3 text-red-600">🚨 Terjadi Kesalahan</h2>
+        <p id="errorMessage" class="text-gray-700 text-sm leading-relaxed"></p>
+
+        <div class="mt-5 text-right">
+          <button onclick="closeError()" 
+                  class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    function showError(msg) {
+        document.getElementById('errorMessage').innerHTML = msg;
+        document.getElementById('errorModal').classList.remove('hidden');
+    }
+
+    function closeError() {
+        document.getElementById('errorModal').classList.add('hidden');
+    }
+    </script>
+
+    {% if error_msg %}
+    <script>
+        showError(`{{ error_msg|safe }}`);
+    </script>
+    {% endif %}
+    <!-- ========================================================= -->
+
+
+    <script>
+    $(document).ready(function(){
+        var table = $('#tabel').DataTable({
+            "pageLength": 50
+        });
+
+        table.column(2).data().unique().sort().each(function(d){
+            $('#filter_rw').append('<option value="'+d+'">'+d+'</option>');
+        });
+        table.column(3).data().unique().sort().each(function(d){
+            $('#filter_rt').append('<option value="'+d+'">'+d+'</option>');
+        });
+        table.column(4).data().unique().sort().each(function(d){
+            $('#filter_dusun').append('<option value="'+d+'">'+d+'</option>');
+        });
+
+        $('#filter_rw').on('change', function(){
+            table.column(2).search(this.value).draw();
+            $('#filter_val_rw').val(this.value);
+        });
+
+        $('#filter_rt').on('change', function(){
+            table.column(3).search(this.value).draw();
+            $('#filter_val_rt').val(this.value);
+        });
+
+        $('#filter_dusun').on('change', function(){
+            table.column(4).search(this.value).draw();
+            $('#filter_val_dusun').val(this.value);
+        });
+    });
+
+
+    const dropzone = document.getElementById("dropzone");
+    const fileInput = document.getElementById("fileInput");
+    const fileName = document.getElementById("fileName");
+
+    // Klik dropzone → buka explorer
+    dropzone.addEventListener("click", () => fileInput.click());
+
+    // Saat file dipilih manual
+    fileInput.addEventListener("change", () => {
+        if (fileInput.files.length > 0) {
+            fileName.textContent = fileInput.files[0].name;
+        }
+    });
+
+    // Prevent default drag behaviors
+    ['dragenter','dragover','dragleave','drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, e => e.preventDefault());
+        document.body.addEventListener(eventName, e => e.preventDefault());
+    });
+
+    // Drag masuk ➜ highlight
+    dropzone.addEventListener("dragover", () => {
+        dropzone.classList.add("border-blue-500", "bg-blue-50");
+    });
+
+    // Drag keluar ➜ kembali normal
+    dropzone.addEventListener("dragleave", () => {
+        dropzone.classList.remove("border-blue-500", "bg-blue-50");
+    });
+
+    // Drop file ➜ masukkan ke input
+    dropzone.addEventListener("drop", (e) => {
+        dropzone.classList.remove("border-blue-500", "bg-blue-50");
+
+        if (e.dataTransfer.files.length > 0) {
+            fileInput.files = e.dataTransfer.files;
+            fileName.textContent = e.dataTransfer.files[0].name;
+        }
+    });
+
+    </script>
+
+</body>
+</html>

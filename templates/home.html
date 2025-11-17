@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pendukung Keputusan – Penentuan Penerima Bantuan</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hero-bg {
+            background:
+                linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+                url('{{ url_for("static", filename="img/1.jpg") }}') center/cover no-repeat;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- HERO SECTION -->
+    <section class="hero-bg min-h-screen flex flex-col justify-center text-center px-6 text-white">
+
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-xl" data-aos="fade-down">
+        Sistem Pendukung Keputusan<br>
+        <span class="text-blue-300">Penentuan Penerima Bantuan</span>
+    </h1>
+
+    <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl opacity-90" data-aos="fade-up" data-aos-delay="200">
+        Platform penilaian otomatis menggunakan metode <b>SAW</b> dan <b>TOPSIS</b>
+        untuk menentukan penerima bantuan secara objektif, cepat, dan akurat.
+    </p>
+
+<a href="{{ url_for('index') }}"
+   class="mt-10 block w-fit mx-auto
+          bg-blue-600 hover:bg-blue-700 
+          transition text-white px-8 py-4 
+          rounded-xl text-lg font-semibold 
+          shadow-lg hover:shadow-xl"
+   data-aos="fade-up" data-aos-delay="500">
+    Mulai Proses Penilaian
+</a>
+
+
+
+</section>
+
+
+
+    <!-- FITUR SECTION -->
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
+            Fitur Utama Sistem
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- CARD 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition" data-aos="zoom-in">
+                <h3 class="text-xl font-semibold mb-3">📥 Upload Data Excel</h3>
+                <p class="text-gray-600">
+                    Sistem menerima file Excel dengan format khusus untuk diproses secara otomatis.
+                </p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="150">
+                <h3 class="text-xl font-semibold mb-3">🧮 Proses SAW + TOPSIS</h3>
+                <p class="text-gray-600">
+                    Normalisasi SAW dan perangkingan TOPSIS dilakukan untuk mendapatkan hasil paling objektif.
+                </p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-xl font-semibold mb-3">📤 Download Hasil</h3>
+                <p class="text-gray-600">
+                    Hasil akhir dapat diunduh dalam format Excel lengkap dengan ranking dan nilai keputusan.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 text-gray-500 text-sm">
+        Sistem SPK Bantuan Sosial © 2025
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>
