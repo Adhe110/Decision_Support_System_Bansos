@@ -44,19 +44,19 @@ Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat
   <tr>
     <td align="center">
       <a href="https://github.com/ElsaPuspitasari">
-        <img src="https://images.weserv.nl/?url=github.com/Adhe110.png&h=80&w=80&fit=cover&mask=circle" /><br>
+        <img src="https://images.weserv.nl/?url=github.com/ElsaPuspitasari&h=80&w=80&fit=cover&mask=circle" /><br>
         <sub><b>Elsa Puspitas Sari ( Ketua )</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Izzatil15">
-        <img src="https://images.weserv.nl/?url=github.com/USERNAME2.png&h=80&w=80&fit=cover&mask=circle" /><br>
+        <img src="https://images.weserv.nl/?url=github.com/Izzatil15.png&h=80&w=80&fit=cover&mask=circle" /><br>
         <sub><b>Nurul Izzatik Mutminah</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Adhe110">
-        <img src="https://images.weserv.nl/?url=github.com/USERNAME3.png&h=80&w=80&fit=cover&mask=circle" /><br>
+        <img src="https://images.weserv.nl/?url=github.com/Adhe110.png&h=80&w=80&fit=cover&mask=circle" /><br>
         <sub><b>Syahrur Adhe Pratama Putra</b></sub>
       </a>
     </td>
