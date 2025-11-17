@@ -45,7 +45,7 @@ Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat
     <td align="center">
       <a href="https://github.com/ElsaPuspitasari">
         <img src="https://images.weserv.nl/?url=github.com/Adhe110.png&h=80&w=80&fit=cover&mask=circle" /><br>
-        <sub><b>Elsa Puspitasa Sari ( Ketua )</b></sub>
+        <sub><b>Elsa Puspitas Sari ( Ketua )</b></sub>
       </a>
     </td>
     <td align="center">
