@@ -1,8 +1,7 @@
 # Decision Support System Bantuan Sosial (Bansos)
 
 ## 1. Project Overview (Gambaran Proyek)  
-Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat penerima bantuan sosial (bansos)** menggunakan metode **SAW (Simple Additive Weighting)** dan **TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)**.  
-Dikembangkan oleh Syahrur Adhe Pratama Putra sebagai proyek tugas/portofolio.
+Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat penerima bantuan sosial (bansos)** menggunakan metode **SAW (Simple Additive Weighting)** dan **TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)**.
 
 ## 2. Features (Fitur)  
 - Upload file Excel data calon penerima bantuan.  
