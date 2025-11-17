@@ -36,5 +36,3 @@ Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat
 3. Jalankan
    ```bash
    python app.py
-
-   
