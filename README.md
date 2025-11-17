@@ -39,8 +39,26 @@ Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat
 
 ## 5. 👥 Contributors
 
-<a href="https://github.com/Adhe110">
-  <img src="https://images.weserv.nl/?url=github.com/Adhe110.png&h=80&w=80&fit=cover&mask=circle" /><br>
-  <sub><b>Syahrur Adhe Pratama Putra</b></sub>
-</a>
 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Adhe110">
+        <img src="https://images.weserv.nl/?url=github.com/Adhe110.png&h=80&w=80&fit=cover&mask=circle" /><br>
+        <sub><b>Syahrur Adhe Pratama Putra</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/USERNAME2">
+        <img src="https://images.weserv.nl/?url=github.com/USERNAME2.png&h=80&w=80&fit=cover&mask=circle" /><br>
+        <sub><b>Nama Anggota 2</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/USERNAME3">
+        <img src="https://images.weserv.nl/?url=github.com/USERNAME3.png&h=80&w=80&fit=cover&mask=circle" /><br>
+        <sub><b>Nama Anggota 3</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
