@@ -44,14 +44,14 @@ Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat
   <tr>
     <td align="center">
       <a href="https://github.com/ElsaPuspitasari">
-        <img src="https://images.weserv.nl/?url=github.com/ElsaPuspitasari&h=80&w=80&fit=cover&mask=circle" /><br>
-        <sub><b>Elsa Puspitas Sari ( Ketua )</b></sub>
+        <img src="https://images.weserv.nl/?url=github.com/ElsaPuspitasari.png&h=80&w=80&fit=cover&mask=circle" /><br>
+        <sub><b>Elsa Puspita Sari ( Ketua )</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Izzatil15">
         <img src="https://images.weserv.nl/?url=github.com/Izzatil15.png&h=80&w=80&fit=cover&mask=circle" /><br>
-        <sub><b>Nurul Izzatik Mutminah</b></sub>
+        <sub><b>Nurul Izzatil Mu'minah</b></sub>
       </a>
     </td>
     <td align="center">
