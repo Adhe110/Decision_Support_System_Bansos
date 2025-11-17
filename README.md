@@ -36,3 +36,10 @@ Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat
 3. Jalankan
    ```bash
    python app.py
+
+## 5. 👥 Contributors
+
+<a href="https://github.com/Adhe110">
+  <img src="https://images.weserv.nl/?url=github.com/Adhe110.png&h=80&w=80&fit=cover&mask=circle" />
+</a>
+
