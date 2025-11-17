@@ -27,3 +27,14 @@ Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat
    ```bash
    git clone https://github.com/Adhe110/Decision_Support_System_Bansos.git
    cd Decision_Support_System_Bansos
+
+
+2. Install Semua Dependency
+   ```bash
+   pip install -r requirements.txt
+
+3. Jalankan
+   ```bash
+   python app.py
+
+   
