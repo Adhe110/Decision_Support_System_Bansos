@@ -37,7 +37,7 @@ Website ini adalah sistem pendukung keputusan (SPK) untuk memberikan **peringkat
    ```bash
    python app.py
 
-## 5. 👥 Contributors
+## 5. Contributors
 
 
 <table>
